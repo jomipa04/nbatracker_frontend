@@ -27,9 +27,7 @@ const GameCard = (props: {
                 width={"70"}
                 height={"70"}
               />
-              <Card.Description color={"white"}>
-                {details["michaelTeam"]}
-              </Card.Description>
+              <Card.Description>{details["michaelTeam"]}</Card.Description>
             </VStack>
             <VStack marginTop={"2.5"} width={"1/3"}>
               <HStack width={"full"} justify={"center"}>
@@ -55,9 +53,7 @@ const GameCard = (props: {
                 width={"70"}
                 height={"70"}
               />
-              <Card.Description color={"white"}>
-                {details["geoTeam"]}
-              </Card.Description>
+              <Card.Description>{details["geoTeam"]}</Card.Description>
             </VStack>
           </HStack>
         </Card.Body>

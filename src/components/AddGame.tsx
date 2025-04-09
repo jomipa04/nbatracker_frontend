@@ -13,7 +13,12 @@ const AddGame = () => {
     <>
       <Dialog.Root>
         <Dialog.Trigger asChild>
-          <Button variant={"solid"} colorPalette={"gray"}>
+          <Button
+            variant={"solid"}
+            colorPalette={"cyan"}
+            width={"full"}
+            maxWidth={"large"}
+          >
             Add Game
           </Button>
         </Dialog.Trigger>
