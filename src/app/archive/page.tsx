@@ -1,5 +1,5 @@
 import { Stack, Table } from "@chakra-ui/react";
-
+export const dynamic = "force-dynamic";
 async function getArchiveData() {
   const res = await fetch("http://127.0.0.1:8000/api/archive/");
   const archiveData = await res.json();
