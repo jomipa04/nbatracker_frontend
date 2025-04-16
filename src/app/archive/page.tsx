@@ -4,11 +4,14 @@ async function getArchiveData() {
   const res = await fetch("http://127.0.0.1:8000/api/archive/");
   const archiveData = await res.json();
 
-  return archiveData["data"]["games"];
+  return archiveData;
 }
 export default async function Page() {
-  const archiveData = await getArchiveData();
-
+  const archives = await getArchiveData();
+  const archiveData = archives["data"]["games"];
+  if (archives["data"]["message"]) {
+    return <p>No games yet</p>;
+  }
   return (
     <Stack
       justify={"center"}
