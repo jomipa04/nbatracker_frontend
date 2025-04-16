@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import {
   Button,
   CloseButton,
@@ -7,11 +8,32 @@ import {
   IconButton,
 } from "@chakra-ui/react";
 import { AiFillDelete } from "react-icons/ai";
+import { useRouter } from "next/navigation";
 
-const DeleteAlert = () => {
+const DeleteAlert = (props: { id: string }) => {
+  const [open, setOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
+  const deleteGame = async () => {
+    try {
+      setIsLoading(true);
+      const res = await fetch(`http://localhost:8000/api/delete/${id}/`, {
+        method: "POST",
+        cache: "no-store",
+      });
+      if (res.status === 200) {
+        router.push("/");
+        setOpen(false);
+        setIsLoading(false);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  const { id } = props;
   return (
     <>
-      <Dialog.Root>
+      <Dialog.Root open={open} onOpenChange={(e) => setOpen(e.open)}>
         <Dialog.Trigger asChild>
           <IconButton variant={"ghost"} width={"1/3"}>
             <AiFillDelete />
@@ -31,7 +53,14 @@ const DeleteAlert = () => {
                 <Dialog.ActionTrigger asChild>
                   <Button variant="outline">Cancel</Button>
                 </Dialog.ActionTrigger>
-                <Button backgroundColor={"red.400"}>Delete</Button>
+                <Button
+                  backgroundColor={"red.500"}
+                  onClick={deleteGame}
+                  variant={"outline"}
+                  disabled={isLoading}
+                >
+                  {`${isLoading ? "..." : "Delete"}`}
+                </Button>
               </Dialog.Footer>
               <Dialog.CloseTrigger asChild>
                 <CloseButton size="sm" />

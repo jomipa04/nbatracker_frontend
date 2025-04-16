@@ -1,6 +1,6 @@
 import React from "react";
 import BioData from "./BioData";
-import { HStack, Stat, Table } from "@chakra-ui/react";
+import { HStack, Stat } from "@chakra-ui/react";
 const BioCard = (props: { profileID: any }) => {
   const { profileID } = props;
   const bioData = profileID == 1 ? BioData.michael : BioData.geo;

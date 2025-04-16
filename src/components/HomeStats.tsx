@@ -3,15 +3,11 @@ import {
   HStack,
   Icon,
   Stat,
-  Flex,
-  WrapItem,
   VStack,
   Avatar,
   defineStyle,
 } from "@chakra-ui/react";
 import { FaFire } from "react-icons/fa6";
-import { SiNba } from "react-icons/si";
-import Avatars from "./Avatars";
 import SparkLine from "./SparkLine";
 import Link from "next/link";
 const ringCss = defineStyle({
@@ -30,13 +26,13 @@ const HomeStats = (props: {
     <>
       {/* AVATARS */}
       <Stat.Root
-        borderWidth="1px"
         width={"full"}
         minWidth={"350px"}
         paddingY={"5"}
         paddingX={"10"}
         marginTop={"20px"}
-        borderRadius={"10px"}
+        marginBottom={"15px"}
+        borderBottomWidth={"1px"}
       >
         <HStack
           justify={"space-between"}
@@ -51,9 +47,10 @@ const HomeStats = (props: {
                 <Avatar.Image src="/JMP.jpg" />
               </Avatar.Root>
             </Link>
-            <p>JMP</p>
+
+            <p style={{ fontWeight: "bold" }}>JMP</p>
           </VStack>
-          <p>VS</p>
+          <p style={{ fontWeight: "bold" }}>VS</p>
           <VStack>
             <Link href="profile/2">
               <Avatar.Root css={ringCss} colorPalette={"red"} size={"xl"}>
@@ -61,7 +58,7 @@ const HomeStats = (props: {
                 <Avatar.Image src="/GJD.jpg" />
               </Avatar.Root>{" "}
             </Link>
-            <p>GEO</p>
+            <p style={{ fontWeight: "bold" }}>GEO</p>
           </VStack>
         </HStack>
         {/* SPARKLINE */}

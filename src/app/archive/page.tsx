@@ -1,4 +1,4 @@
-import { Card, Stack, Table } from "@chakra-ui/react";
+import { Stack, Table } from "@chakra-ui/react";
 
 async function getArchiveData() {
   const res = await fetch("http://127.0.0.1:8000/api/archive/");

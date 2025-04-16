@@ -1,4 +1,4 @@
-import { Badge, Card, HStack, Stat, Wrap, WrapItem } from "@chakra-ui/react";
+import { Stat, Wrap, WrapItem } from "@chakra-ui/react";
 import React from "react";
 
 const OtherStats = (props: { profileData: any }) => {

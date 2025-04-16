@@ -1,22 +1,24 @@
 import React from "react";
 import Image from "next/image";
-import { Card, HStack, VStack, IconButton, Button } from "@chakra-ui/react";
-import { AiFillDelete } from "react-icons/ai";
+import { Card, HStack, VStack } from "@chakra-ui/react";
 import DeleteAlert from "./DeleteAlert";
 const GameCard = (props: {
   date: string;
   quit: boolean;
   winner: string;
   details: any;
+  id: string;
 }) => {
-  const { date, quit, winner, details } = props;
+  const { date, winner, details, id } = props;
+
   return (
     <>
       <Card.Root
         width={"full"}
         maxW={"lg"}
-        variant={"elevated"}
         padding={"-0.5"}
+        borderBottomColor={winner == "JM" ? "blue.400" : "red.400"}
+        boxShadow={"xl"}
       >
         <Card.Body>
           <HStack w="full" justify={"space-evenly"}>
@@ -27,7 +29,9 @@ const GameCard = (props: {
                 width={"70"}
                 height={"70"}
               />
-              <Card.Description>{details["michaelTeam"]}</Card.Description>
+              <Card.Description fontWeight={"bold"}>
+                {details["michaelTeam"]}
+              </Card.Description>
             </VStack>
             <VStack marginTop={"2.5"} width={"1/3"}>
               <HStack width={"full"} justify={"center"}>
@@ -42,6 +46,7 @@ const GameCard = (props: {
                 fontFamily={"heading"}
                 color={winner == "JM" ? "blue.400" : "red.400"}
                 textAlign={"center"}
+                fontWeight={"bold"}
               >
                 {winner == "JM" ? "JMP" : "GEO"}
               </Card.Description>
@@ -53,17 +58,20 @@ const GameCard = (props: {
                 width={"70"}
                 height={"70"}
               />
-              <Card.Description>{details["geoTeam"]}</Card.Description>
+              <Card.Description fontWeight={"bold"}>
+                {details["geoTeam"]}
+              </Card.Description>
             </VStack>
           </HStack>
         </Card.Body>
+
         <Card.Footer>
           <HStack justify={"space-between"} width={"full"}>
             <Card.Description width={"1/3"} textAlign={"center"}>
               {date}
             </Card.Description>
 
-            <DeleteAlert />
+            <DeleteAlert id={id} />
           </HStack>
         </Card.Footer>
       </Card.Root>

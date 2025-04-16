@@ -1,9 +1,8 @@
-import Image from "next/image";
 import GameCard from "@/components/GameCard";
-import { Button, IconButton, Link, VStack, Wrap } from "@chakra-ui/react";
+import { IconButton, Link, VStack, Wrap } from "@chakra-ui/react";
 import HomeStats from "@/components/HomeStats";
 import AddGame from "@/components/AddGame";
-import SparkLine from "@/components/SparkLine";
+
 import { FaArchive } from "react-icons/fa";
 
 async function getHomeData() {
@@ -15,29 +14,35 @@ async function getHomeData() {
 export default async function Home() {
   const gamesData = await getHomeData();
   const games = gamesData["data"]["games"];
-
+  console.log(gamesData["data"]["message"]);
   return (
     <>
       <Wrap width={"full"} justify={"center"} padding={"2"}>
-        <VStack justify={"center"}>
-          <HomeStats
-            numOfGames={gamesData["data"]["numOfGames"]}
-            streakStats={gamesData["data"]["streakStat"]}
-            games={games}
-          />
-
+        <VStack justify={"center"} width={"lg"}>
+          {gamesData["data"]["message"] ? (
+            ""
+          ) : (
+            <HomeStats
+              numOfGames={gamesData["data"]["numOfGames"]}
+              streakStats={gamesData["data"]["streakStat"]}
+              games={games}
+            />
+          )}
           <AddGame />
-          {games.map((game: any, i: number) => {
-            return (
-              <GameCard
-                key={i}
-                date={game["date"]}
-                quit={game["quit"]}
-                winner={game["winner"]}
-                details={game["details"]}
-              />
-            );
-          })}
+          {gamesData["data"]["message"]
+            ? "No games yet"
+            : games.map((game: any, i: number) => {
+                return (
+                  <GameCard
+                    key={i}
+                    id={game["id"]}
+                    date={game["date"]}
+                    quit={game["quit"]}
+                    winner={game["winner"]}
+                    details={game["details"]}
+                  />
+                );
+              })}
           <Link href="archive/" width={"full"}>
             <IconButton
               width={"full"}

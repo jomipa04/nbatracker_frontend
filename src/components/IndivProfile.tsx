@@ -4,16 +4,13 @@ import {
   defineStyle,
   HStack,
   Icon,
-  Link,
   Stat,
   VStack,
   Wrap,
 } from "@chakra-ui/react";
 import React from "react";
-import { FaFire } from "react-icons/fa6";
 import { FaCrown, FaRegTrashAlt } from "react-icons/fa";
 import BioCard from "./BioCard";
-import { profile } from "console";
 import OtherStats from "./OtherStats";
 import { CiLogout } from "react-icons/ci";
 
