@@ -1,7 +1,8 @@
 import { Provider } from "@/components/ui/provider";
 export const metadata = {
-  title: "NBATracker",
-  description: "JoMiPa",
+  title: "NBA2k Tracker",
+  description:
+    "Death. Taxes. NBA2k. - It's not an addiction, it's a lifestyle.",
 };
 
 export default function RootLayout({
