@@ -1,6 +1,6 @@
 import { Provider } from "@/components/ui/provider";
 export const metadata = {
-  title: "NBA2k Tracker",
+  title: "NBATracker",
   description:
     "Death. Taxes. NBA2k. - It's not an addiction, it's a lifestyle.",
 };
