@@ -1,10 +1,12 @@
 import { Provider } from "@/components/ui/provider";
-export const metadata = {
+import { Metadata } from "next";
+export const metadata: Metadata = {
   title: "NBATracker",
   description:
     "Death. Taxes. NBA2k. - It's not an addiction, it's a lifestyle.",
+  metadataBase: new URL("https://twokaytracker.onrender.com"),
   openGraph: {
-    images: ["https://twokaytracker.onrender.com/opengraph-image.png"],
+    images: ["opengraph-image.png"],
   },
 };
 
