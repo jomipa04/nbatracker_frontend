@@ -8,7 +8,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "NBA2k Tracker",
-  description: "Death.Taxes.NBA2k. - It's not an addiction, it's a lifestyle.",
+  description:
+    "Death. Taxes. NBA2k. - It's not an addiction, it's a lifestyle.",
   metadataBase: new URL("https://twokaytracker.onrender.com"),
 };
 async function getHomeData() {
