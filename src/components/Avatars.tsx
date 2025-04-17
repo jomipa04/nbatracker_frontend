@@ -37,7 +37,7 @@ const Avatars = (props: { games: any }) => {
         <VStack>
           <Avatar.Root css={ringCss} colorPalette={"red"}>
             <Avatar.Fallback name="Geo Daquioag" />
-            <Avatar.Image src="https://bit.ly/sage-adebayo" />
+            <Avatar.Image src="/GJD.jpg" />
           </Avatar.Root>{" "}
           <p>GEO</p>
         </VStack>

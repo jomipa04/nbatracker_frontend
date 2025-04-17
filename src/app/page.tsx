@@ -6,7 +6,9 @@ import AddGame from "@/components/AddGame";
 import { FaArchive } from "react-icons/fa";
 
 async function getHomeData() {
-  const res = await fetch("http://127.0.0.1:8000/api/", { cache: "no-store" });
+  const res = await fetch("https://twokaybackend.onrender.com/api/", {
+    cache: "no-store",
+  });
   const gamesData = await res.json();
   return gamesData;
 }

@@ -4,7 +4,9 @@ import { VStack, Wrap } from "@chakra-ui/react";
 
 async function getProfileData(profileId: any) {
   const res = await fetch(
-    `http://127.0.0.1:8000/api/${profileId == "1" ? "michael" : "geo"}/`
+    `https://twokaybackend.onrender.com/api/${
+      profileId == "1" ? "michael" : "geo"
+    }/`
   );
   const profileData = await res.json();
 

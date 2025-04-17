@@ -44,7 +44,7 @@ const AddGame = () => {
     };
     try {
       setIsLoading(true);
-      const res = await fetch(`http://localhost:8000/api/add/`, {
+      const res = await fetch(`https://twokaybackend.onrender.com/api/add/`, {
         headers: {
           "Content-Type": "application/json",
         },
