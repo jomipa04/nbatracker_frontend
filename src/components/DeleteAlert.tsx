@@ -17,10 +17,13 @@ const DeleteAlert = (props: { id: string }) => {
   const deleteGame = async () => {
     try {
       setIsLoading(true);
-      const res = await fetch(`http://localhost:8000/api/delete/${id}/`, {
-        method: "POST",
-        cache: "no-store",
-      });
+      const res = await fetch(
+        `https://twokaybackend.onrender.com/api/delete/${id}/`,
+        {
+          method: "POST",
+          cache: "no-store",
+        }
+      );
       if (res.status === 200) {
         router.push("/");
         setOpen(false);
