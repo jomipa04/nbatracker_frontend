@@ -3,6 +3,9 @@ export const metadata = {
   title: "NBATracker",
   description:
     "Death. Taxes. NBA2k. - It's not an addiction, it's a lifestyle.",
+  openGraph: {
+    images: ["https://twokaytracker.onrender.com/opengraph-image.png"],
+  },
 };
 
 export default function RootLayout({
