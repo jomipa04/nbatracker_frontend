@@ -17,6 +17,10 @@ export default async function Home() {
   const gamesData = await getHomeData();
   const games = gamesData["data"]["games"];
   console.log(gamesData["data"]["message"]);
+
+  if (gamesData["data"]["message"]) {
+    return <p>No games yet</p>;
+  }
   return (
     <>
       <Wrap width={"full"} justify={"center"} padding={"2"}>
