@@ -4,14 +4,14 @@ import HomeStats from "@/components/HomeStats";
 import AddGame from "@/components/AddGame";
 
 import { FaArchive } from "react-icons/fa";
-import type { Metadata } from "next";
+// import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "NBA2k Tracker",
-  description:
-    "Death. Taxes. NBA2k. - It's not an addiction, it's a lifestyle.",
-  metadataBase: new URL("https://twokaytracker.onrender.com"),
-};
+// export const metadata: Metadata = {
+//   title: "NBA2k Tracker",
+//   description:
+//     "Death. Taxes. NBA2k. - It's not an addiction, it's a lifestyle.",
+//   metadataBase: new URL("https://twokaytracker.onrender.com"),
+// };
 async function getHomeData() {
   const res = await fetch("https://twokaybackend.onrender.com/api/", {
     cache: "no-store",
