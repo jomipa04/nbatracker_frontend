@@ -41,7 +41,7 @@ export default async function Page() {
               <Table.Cell textAlign={"center"}>{item.date}</Table.Cell>
               <Table.Cell
                 textAlign={"center"}
-              >{`${item.details["michaelTeam"]} (${item.details["michaelScore"]}) - ${item.details["geoTeam"]} (${item.details["michaelScore"]})`}</Table.Cell>
+              >{`${item.details["michaelTeam"]} (${item.details["michaelScore"]}) - ${item.details["geoTeam"]} (${item.details["geoScore"]})`}</Table.Cell>
               <Table.Cell
                 textAlign={"center"}
                 color={`${item.winner == "JM" ? "blue.500" : "red.500"}`}
